@@ -8,6 +8,7 @@ Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taravi
 
 ### Agenda
 
+-Decide on research question with Hans
 
 ### Meeting Minutes
 
