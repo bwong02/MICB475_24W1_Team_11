@@ -13,6 +13,11 @@ Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taravi
 
 ### Meeting Minutes
 
+2 Paper Choices: Gastrointestinal Cancer or Breast Cancer
+- Breast Cancer does not have much metadata on the cancer patients
+- * CHOSE GASTROINTESTINAL CANCER DATA *
+
+
 
 ## October 10, 2024
 
