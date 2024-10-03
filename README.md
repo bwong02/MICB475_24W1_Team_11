@@ -24,11 +24,18 @@ Research Questions Brainstorm
 - How does H. pylori affect the microbiome community?
 - Look at H. pylori both taxonomically and functionally?
 - Is H. pylori associated with different histopathology stages?
-- BEFORE MAKING A RESEARCH QUESTION, MAKE A CORRELATION PLOT OR CREATE A NEW METADATA CATEGORY (go with group and positive/negative like HC+, HC-, GC+, GC-)
+- BEFORE MAKING A RESEARCH QUESTION, MAKE A CORRELATION PLOT OR CREATE A NEW METADATA CATEGORY (go with group and H. pylori positive/negative like HC+, HC-, CG+, CG-, etc.)
+
+Next Steps
+- Create a column with the groups you want to compare
+- Make heat map comparing the different categories (UJEMI+ anemia group did a heat map)
+- Outline proposal before next meeting (aims and research question)
+- Check with Hans if trimming or denoising is appropriate 
 
 Other Notes:
  - If we find an non-annotated ASV, we can BLAST it
  - Finding an ASV does not mean it is biologically significant in the community
+
 
 
 
