@@ -15,7 +15,20 @@ Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taravi
 
 2 Paper Choices: Gastrointestinal Cancer or Breast Cancer
 - Breast Cancer does not have much metadata on the cancer patients
-- * CHOSE GASTROINTESTINAL CANCER DATA *
+- ** CHOSE GASTROINTESTINAL CANCER DATA **
+
+Research Questions Brainstorm
+- 2 question routes:
+  - Taxonomic route: what species or communities exist or is associated with something
+  - Functional route: predict what metabolic pathways exist in those communities
+- How does H. pylori affect the microbiome community?
+- Look at H. pylori both taxonomically and functionally?
+- Is H. pylori associated with different histopathology stages?
+- BEFORE MAKING A RESEARCH QUESTION, MAKE A CORRELATION PLOT OR CREATE A NEW METADATA CATEGORY (go with group and positive/negative like HC+, HC-, GC+, GC-)
+
+Other Notes:
+ - If we find an non-annotated ASV, we can BLAST it
+ - Finding an ASV does not mean it is biologically significant in the community
 
 
 
