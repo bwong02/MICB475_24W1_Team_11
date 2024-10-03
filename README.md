@@ -27,10 +27,10 @@ Research Questions Brainstorm
 - BEFORE MAKING A RESEARCH QUESTION, MAKE A CORRELATION PLOT OR CREATE A NEW METADATA CATEGORY (go with group and H. pylori positive/negative like HC+, HC-, CG+, CG-, etc.)
 
 Next Steps
-- Create a column with the groups you want to compare
-- Make heat map comparing the different categories (UJEMI+ anemia group did a heat map)
-- Outline proposal before next meeting (aims and research question)
-- Check with Hans if trimming or denoising is appropriate 
+1. Create a column with the Group + H. pylori status
+2. Make heat map comparing the different categories (UJEMI+ anemia group did a heat map)
+3. Outline proposal before next meeting (aims and research question)
+4. Check with Hans if trimming or denoising is appropriate 
 
 Other Notes:
  - If we find an non-annotated ASV, we can BLAST it
