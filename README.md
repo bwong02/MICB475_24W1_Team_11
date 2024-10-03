@@ -15,7 +15,7 @@ Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taravi
 
 2 Paper Choices: Gastrointestinal Cancer or Breast Cancer
 - Breast Cancer does not have much metadata on the cancer patients
-- ** CHOSE GASTROINTESTINAL CANCER DATA **
+- **CHOSE GASTROINTESTINAL CANCER DATA**
 
 Research Questions Brainstorm
 - 2 question routes:
