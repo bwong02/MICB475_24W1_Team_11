@@ -29,8 +29,8 @@ Research Questions Brainstorm
 Next Steps
 1. Create a column with the Group + H. pylori status - Nicholas
 2. Make heat map comparing the different categories (UJEMI+ anemia group did a heat map) - Miles
-3. Outline proposal before next meeting (aims and research question)
-4. Eventually check with Hans if trimming or denoising is appropriate 
+4. Outline proposal before next meeting (aims and research question) - McKenna, Brandon, Gabi
+5. Eventually check with Hans if trimming or denoising is appropriate 
 
 Other Notes:
  - If we find an non-annotated ASV, we can BLAST it
