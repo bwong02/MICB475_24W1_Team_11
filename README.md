@@ -8,7 +8,8 @@ Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taravi
 
 ### Agenda
 
-- Decide on research question with Hans
+- Go through proposed papers and databases to decide on one to move forward with
+- Brainstorm research question depending on final database chosen
 
 ### Meeting Minutes
 
