@@ -2,6 +2,15 @@
 
 Team 11: Brandon Wong, Gabi Reznik, McKenna Postles, Miles Silva, Nicolas Taraviras
 
+**Hi Team 11! Here are the zoom link and passcode we will use for our next meeting (October 10th). Thank you and see you soon!**
+
+Here is the link you can use: https://ubc.zoom.us/j/67359231965?pwd=1QOWWuFTTjXQcla2T32GQ5MoyAUHhG.1
+
+Meeting ID: 673 5923 1965
+
+Passcode: 574502
+
+
 # Meeting Minutes and Agenda
 
 ## October 3, 2024
