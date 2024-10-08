@@ -56,15 +56,15 @@ Other Notes:
 - Potential questions:
   - Is there a difference in microbiome diversity and function comparing  +/- H. pylori status within and between disease stages of gastric cancer?
 - Our thoughts/questions 
-    - Is this okay for us to move forward with H. pylori analysis, even though they also examined
+  - Is this okay for us to move forward with H. pylori analysis, even though they also examined
       
 **2. Discuss project rational (discuss heat map, etc...)**
-    - Rationale: created a heat map looking at (+/-) HP samples in each stage:
-    - We noticed little difference between collection sites, which led us to look into differences between groups and not distinguish 
+- Rationale: created a heat map looking at (+/-) HP samples in each stage:
+- We noticed little difference between collection sites, which led us to look into differences between groups and not distinguish 
       between collection sites. 
-    - We noticed a difference in relative percentages between groups
-    - We discussed looking into differences between subtypes within each stage but decided against it due to sample constraints. 
-    - The heatmap is located in the R folder already. The R project and script file are also there. 
+- We noticed a difference in relative percentages between groups
+- We discussed looking into differences between subtypes within each stage but decided against it due to sample constraints. 
+- The heatmap is located in the R folder already. The R project and script file are also there. 
 
 **3. Discuss project aims** 
 Aim 1: Is there an H. Pylori status difference between different sites within a disease stage (supported by heat map)?
@@ -72,7 +72,7 @@ Aim 2: Does H. pylori status and disease stage affect beta diversity and microbi
 Aim 3: What functional differences exist between the communities at each disease stage and between disease stages? 
 
 **4. Go through our qiime2 workflow** 
-    - Trimming, rarefaction, diversity plots, etc... 
+- Trimming, rarefaction, diversity plots, etc... 
 
 ### Meeting Minutes
 
