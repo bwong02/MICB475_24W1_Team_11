@@ -75,6 +75,12 @@ Aim 3: What functional differences exist between the communities at each disease
 - Trimming, rarefaction, diversity plots, etc... 
 
 ### Meeting Minutes
+**Hans Points from Assignment 5**
+- To make things reproducible, always include all input files, output files, and scripts in the middle
+  - No lines of code should be needed to change
+- Avoid absolute paths and include relative paths from the folder you're sharing with the person
+- Always comment preceding the code --> describe what code does
+  - Very helpful!
 
 
 ## October 17, 2024
