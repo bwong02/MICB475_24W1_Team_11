@@ -86,14 +86,14 @@ Aim 3: What functional differences exist between the communities at each disease
 
 **For talking point 1:**
  - Paper looked within cohorts and only looked at the abundance of H. pylori, grouping it into low (below 0.01) and high abundance
-   - 0.01 is already pretty undetectable. We can change this or create our own categories to: Low can be 0.01 - 1% and high above 1%
+   - 0.01 is already pretty undetectable. We can change this or create our own categories to i.e. Low can be 0.01 - 1% and high above 1%
  - Paper already did basic analysis of H. pylori and did basic microbiome analysis, BUT the paper did not go past the PCoA analysis
    
  - How about we make **new metadata**. New category we look at: Fusobacteria
    - Explore how the presence or absence of this microbe changes the community composition
    - Potentially, redo what they did and look at H. pylori and Fusobacteria (**OR only Fusobacteria**)
      - Assign undetectable, low, and high for abundance
-       - Undetectable should be half of the error rate of the machine they use (find error rate in the seq they use)
+       - **Undetectable** should be half of the error rate of the machine they use (find error rate in the seq they use)
        - I.e. Undetectable H. pylori against low fusobacteria
      - Though we may not have enough sampels for some of the categories, it would be interesting to look at these new categories
    - Should we also look at Functional too? How would Hans approach it?
@@ -101,12 +101,15 @@ Aim 3: What functional differences exist between the communities at each disease
      - We can look at both taxonomic and functional then change this 1 month later (proposal does not need to match final outcome)
    - Should we look at the low abundant species as there was unweighted significance
      
-  - **FINAL DECISION**:
+  - **FINAL DECISION (include it in the proposal)**:
     - Categorize the abundance of H. pylori to undetectable, low, and high (new categorization)
+    - Categorize the abundance of Fusobacteria to undetectable, low, and high (novel analysis)
     - Look at the taxonomy across the stages and progression to gastric cancer (GC)
     - Also do a functional analysis of the bacteria at the stages
   
-  
+  - Action items:
+    - Find another paper that categorizes undetectable, low, and high
+    - Have aims, objectives, and approach set before the next meeting (points 2-5)
 
 
 ## October 17, 2024
