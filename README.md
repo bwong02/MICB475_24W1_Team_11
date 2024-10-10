@@ -82,6 +82,19 @@ Aim 3: What functional differences exist between the communities at each disease
 - Always comment preceding the code --> describe what code does
   - Very helpful!
 
+ **Deadline for Proposal is October 20**
+
+**For talking point 1:**
+ - Paper looked within cohorts and only looked at the abundance of H. pylori, grouping it into low (below 0.01) and high abundance
+   - 0.01 is already pretty undetectable. We change this to: Low can be 0.01 - 1% and high above 1%
+ - Paper already did basic analysis of H. pylori and did basic microbiome analysis, BUT the paper did not go past the PCoA analysis
+ - How about we make new metadata. New category we look at: Fusobacteria
+   - Explore how the presence or absence of this microbe changes the community composition
+   - Potentially, redo what they did and look at H. pylori and Fusobacteria
+     - Assign undetectable, low, and high
+     - I.e. Undetectable H. pylori against low fusobacteria
+     - 
+
 
 ## October 17, 2024
 
