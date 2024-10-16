@@ -116,6 +116,10 @@ Aim 3: What functional differences exist between the communities at each disease
 
 ### Agenda
 
+Discussion:
+- Confirm the abdunance levels and convention with Hans
+- Confirm aims with Hans
+- Confirm approach with Hans
 
 ### Meeting Minutes
 
