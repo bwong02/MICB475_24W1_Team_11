@@ -120,6 +120,7 @@ Go through **Project Proposal**: https://docs.google.com/document/d/1onvvpNUt2O3
 - Confirm the abdunance levels and convention with Hans
 - Confirm Aims with Hans
   - Do we combine Aims 2 and 3?
+  - What happens if Aim 2 goes wrong? Can it and how do you justify this? 
 - Confirm Approaches with Hans
 - Confirm the Data Set Overview (which ones to do)
 
