@@ -118,9 +118,10 @@ Aim 3: What functional differences exist between the communities at each disease
 
 Go through **Project Proposal**: https://docs.google.com/document/d/1onvvpNUt2O39NBdv-u6NiFVkD_dlgdf6OKItRVRdAC0/edit?usp=sharing
 - Confirm the abdunance levels and convention with Hans
-- Confirm aims with Hans
-- Confirm approach with Hans
-- Confirm the data set overview (which ones to do)
+- Confirm Aims with Hans
+  - Do we combine Aims 2 and 3?
+- Confirm Approaches with Hans
+- Confirm the Data Set Overview (which ones to do)
 
 ### Meeting Minutes
 
