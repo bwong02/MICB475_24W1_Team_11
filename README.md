@@ -126,6 +126,19 @@ Go through **Project Proposal**: https://docs.google.com/document/d/1onvvpNUt2O3
 
 ### Meeting Minutes
 
+Notes
+- Keeping the nucleotide reads longer will give better resolution
+- **Abundance Levels Question**
+  - 0.01 is a commonly accepted number for relative abundance and the notation we used is good with the %
+  - We don't need a specific paper that used our abundance ranges
+  - Say we defined 1 as low abundance then justify why we did this
+  - For the study, look at how many species are present above 1% abundance and how many are below
+- **Data Set Overview Question**
+  - Use the original data set overview in the canvas
+- **Aims Questions**
+  - Be redundant
+  - It's not upregulation, it's an increase in representation/presence
+  - Pie Crest: Takes input of sequences --> sees what genes are present --> sees what pathways COULD be expressed or used (functional POTENTIAL and PREDICTION)
 
 ## October 24, 2024
 
