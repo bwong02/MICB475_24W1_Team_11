@@ -135,10 +135,25 @@ Notes
   - For the study, look at how many species are present above 1% abundance and how many are below
 - **Data Set Overview Question**
   - Use the original data set overview in the canvas
-- **Aims Questions**
-  - Be redundant
+- **Research Objective Questions**
   - It's not upregulation, it's an increase in representation/presence
   - Pie Crest: Takes input of sequences --> sees what genes are present --> sees what pathways COULD be expressed or used (functional POTENTIAL and PREDICTION)
+    - With 16S, we are looking at prediction of potential
+    - Future directions can say we do transcriptomics
+- **Aims Questions**
+  - Paper Overall: You should be redundant
+  - Most comments are on the google doc
+  - For Aim 3, if we care more about disease stage, do Indicator Species Analysis (ISA) on progression
+    - NOT FOR PROPOSAL BUT GOOD TO KNOW
+    - Read a paper by morton et al. 2019 - reference frames
+    - Knight Lab
+      - Interesting way to look at changes in abundance
+      - Log 10 ratio of two taxa with 1 being constant and then the other changing across samples???
+  - What happens if Aim 2 goes wrong?
+    - Hans says you can have a paper of negative results --> if this happens, focus on indicator taxa part and see if there is any correlation with function etc.
+    - Just say there's nothing interested we found about H. pylori and Fusobacterium
+- **Proposed Timeline**
+ - Include learning QIIME (everything since September)
 
 ## October 24, 2024
 
