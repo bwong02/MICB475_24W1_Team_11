@@ -153,7 +153,7 @@ Notes
     - Hans says you can have a paper of negative results --> if this happens, focus on indicator taxa part and see if there is any correlation with function etc.
     - Just say there's nothing interested we found about H. pylori and Fusobacterium
 - **Proposed Timeline**
- - Include learning QIIME (everything since September)
+  - Include learning QIIME (everything since September)
 
 ## October 24, 2024
 
