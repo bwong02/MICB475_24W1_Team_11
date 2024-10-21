@@ -155,10 +155,10 @@ Notes
 - **Proposed Timeline**
   - Include learning QIIME (everything since September)
 
-## October 24, 2024
+## October 21, 2024
 
 ### Agenda
-
+- Go over proposal
 
 ### Meeting Minutes
 
