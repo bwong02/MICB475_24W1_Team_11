@@ -161,7 +161,16 @@ Notes
 - Go over proposal
 
 ### Meeting Minutes
-
+Notes
+- We have the chance to resubmit the proposal
+  - Automatic 5% more if we resubmit (probably)
+- Question: Confused about Functional.
+  - Our thoughts: Do whole thing --> reclassification of H. pylori & Fusobactera --> 2 new columns (bacteria + disease stage) --> run PiCRUSt2 based on these groups
+  - Hans
+    - PiCRUSt2 output: Gives pathway representation (how much is present and how much is not) --> raw count of pathway present in one sample
+    - Calculate the log fold change of representation of pathways
+    - DESEQ2 does normalization
+    - In the 3 categories in each disease stage, meaning 15 groups, we can make a stacked bar plot --> each panel has 1 pathway (do top 10 overrepresented and top 10 underrepresented, each one is going to have 5 stacked bar plots)
 
 ## October 31, 2024
 
