@@ -176,6 +176,8 @@ Notes
     - We can't include abundance in the analysis
     - Should simplify analysis
     - We were right in our proposal
+      
+- **GOAL for this Week: Complete Aim 1**
 
 ## October 31, 2024
 
