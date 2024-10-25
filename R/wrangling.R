@@ -46,6 +46,12 @@ if (length(fuso_otu) > 0) {
 # Rename the column after all processing
 colnames(metadata)[colnames(metadata) == "fuso_detected"] <- "Fusobacterium_abundance"
 
+metadata <- metadata %>%
+  mutate(Stage_FusoAbundance = paste(Group, Fusobacterium_abundance, sep = "_"))
+
+metadata <- metadata %>%
+  mutate(Stage_Pylori = paste(Group, `H. pylori status                                 13 C-urea breath test`, sep = "_"))
+
 # Save the updated metadata to a new TSV file
 write.table(metadata, file = "updated_gastric_cancer_metadata.tsv", 
             sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
