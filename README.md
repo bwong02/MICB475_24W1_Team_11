@@ -182,7 +182,9 @@ Notes
 ## October 31, 2024
 
 ### Agenda
-
+- Troubleshoot H. pylori topic (no H. pylori in the database)
+  - What should we BLAST? Can we use something different than Silva?
+- Proposal clarifications
 
 ### Meeting Minutes
 
