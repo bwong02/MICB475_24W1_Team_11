@@ -187,7 +187,11 @@ Notes
 - Proposal clarifications
 
 ### Meeting Minutes
-
+- **Notes**
+  - Paper uses V4 region of the 16S
+  - OTUs would have fewer details than ASVs, so no point of using OTUs
+  - Add an Aim --> with Silva, we are not getting any H. pylori so let's try using Greengenes database
+    -  In paper we can say, in Silva, H. pylori was not reported
 
 ## November 7, 2024
 
