@@ -197,6 +197,13 @@ Notes
 
 ### Agenda
 
+Get Hans' Input:
+- How to update taxonomy tree file so it reflects our BLAST on unresolved ASVs
+  - Ask about BLAST (we tried to figure out unresolved sequences)
+- Using the breath test H. pylori data
+- NEW Topic: Redo the original paper's analysis but with Fusobacterium (low vs. high, 0 vs. low vs. high)
+ 
+
 
 ### Meeting Minutes
 
