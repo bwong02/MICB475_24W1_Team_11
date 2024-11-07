@@ -202,11 +202,20 @@ Get Hans' Input:
   - Ask about BLAST (we tried to figure out unresolved sequences)
 - Using the breath test H. pylori data
 - NEW Topic: Redo the original paper's analysis but with Fusobacterium (low vs. high, 0 vs. low vs. high)
- 
-
 
 ### Meeting Minutes
 
+Timeline
+- Oral Presentation: Dec 3 or Dec 5
+- Need the project to be completely finished by then too
+
+Action Items
+- Nicholas: Get all files on local computer in case of server restart
+- Get all data by Nov 21 (plots, conclusions, etc.)
+
+Hans Input
+- We should do positive and negative for Fusobacterium
+- Fusobacterium species found is weird so Hans recommends we should BLAST
 
 ## November 14, 2024
 
