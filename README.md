@@ -214,8 +214,9 @@ Action Items
 - Get all data by Nov 21 (plots, conclusions, etc.)
 
 Hans Input
-- We should do positive and negative for Fusobacterium
+- We should do positive and negative for Fusobacterium (do the same rankings as the paper)
 - Fusobacterium species found is weird so Hans recommends we should BLAST
+- Do NOT BLAST unresolved sequences
 
 ## November 14, 2024
 
