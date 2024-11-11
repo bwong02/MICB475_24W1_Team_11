@@ -1,0 +1,6 @@
+#### Aim 4: Explore the effect of H. pylori and Fusobacteria abundance on the functional diversity of the gastric mucosa microbiome during gastric cancer disease progression ####
+4A. Install PICRUSt2 (39), generate metabolic data by running preliminary pipeline using filtered metadata (from 1F) for predicting functional potential of community members 
+4B. Run PICRUSt2 pipeline analysis based on new columns combining disease stage with H. pylori or Fusobacterium abundance
+4C. Produce tables of top 10 up-represented and top 10 down-represented metabolic pathways on R between grouping
+4D. Produce heatmap and volcano plot visualizations of pathway representation on R
+4E. Evaluate identified pathways between groups and perform statistical analysis on R to identify significant associations
