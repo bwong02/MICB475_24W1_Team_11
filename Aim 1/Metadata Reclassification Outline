@@ -1,0 +1,8 @@
+#### Aim 1: Reclassify samples based on H. pylori and Fusobacterium abundance within the gastric mucosa microbiome ####
+1A. Import raw data and demultiplex using QIIME2 (38)
+1B. Quality control denoising and cluster data using QIIME2 to generate feature table and representative sequences
+1C. Train classifier, perform taxonomic analysis and taxonomy-based filtering to remove non-bacterial sequences and generate phylogenetic tree of ASVs (Phyloseq Objects)
+1D. Make rarefaction curve, then apply determined sampling depth rarefaction using QIIME2
+1E. Classify samples with regard to H. pylori and Fusobacterium abundance as “undetectable”, “low”, or “high” and add to metadata table as 2 new columns on R
+1F. Wrangle data with regards to H. pylori and Fusobacterium abundance and disease stage, creating 3 new columns (2 combining individual bacterium abundance and disease stage, and 1 combining all three states)
+
