@@ -222,5 +222,7 @@ Hans Input
 
 ### Agenda
 
+Get Hans' Input:
+- Confirm how to format figures
 
 ### Meeting Minutes
