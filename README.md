@@ -224,5 +224,6 @@ Hans Input
 
 Get Hans' Input:
 - Confirm how to format figures
+- The story we want to tell
 
 ### Meeting Minutes
