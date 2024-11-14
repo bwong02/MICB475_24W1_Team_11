@@ -224,6 +224,7 @@ Hans Input
 
 Get Hans' Input:
 - Confirm how to format figures
+- Ask how to sort through/filter ISA outputs
 - The story we want to tell
 
 ### Meeting Minutes
