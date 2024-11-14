@@ -237,6 +237,16 @@ OBJECTIVE OF PAPER: See how Fusobacteirum affects the microbiome
 - **Aim 2**: DIVERSITY. Look at differences between high and low Fusobacterium within each stage. We have graphs of the differences in each plot.
   - How do we compare between stages?
   - Probably will make one plot which would have distance on y axis while x axis has each stage, this comparing both between and within stages.
-  - 
-- **Aim 3**: Indicator Species Analysis which shows the microbiome most associated with each group. Have table of ISA results of overall groups (IN vs. GC) and have a table of ISA results of low and high abundance within groups. 
+- **Aim 3**: Indicator Species Analysis which shows the microbiome most associated with each group (closer to 1 means better indicator species). Have table of ISA results of overall groups (IN vs. GC) and have a table of ISA results of low and high abundance within groups.
+  - Make a table of difference in species with + a species OR - a species
+  - Hans recommends we make the p-value more strict for ISA
+  - Hans recommends running a **Core Microbiome analysis** and show a venn diagram (Five circle venn diagram by group stage. Five 2 circle venn diagrams for within each stage)
+- **AIm 4**: FUNCTIONAL. Heat map with different pathways across samples.
+  -  Log2fold change with mean standard deviation for each condition --> why don't we turn this into a box plot and plot that for the most representative pathways of interest with the x-axis being the conditions (disease progression) and y-axis would be log2fold change from DESeq . Would be able to see how log2fold change changes from high to low abundance.
+    -  OR Heat Maps. Five comparison of high and low Fusobacterium.
+  -   Only do functional on high and low abundance within stages.
+ 
+We are looking at known indicators with Gastric Cancer and see how Fusobacterium changes this.
+ 
+
 - Seeing diversity is becoming more diverse --> beta-diversity with a PCoA plot would show this
