@@ -228,3 +228,15 @@ Get Hans' Input:
 - The story we want to tell
 
 ### Meeting Minutes
+
+DESeq:
+- Get differential abundance
+
+OBJECTIVE OF PAPER: See how Fusobacteirum affects the microbiome
+- **Aim 1**: Rearrange the metadata. Show summary statistics of that in the supplementary. Make a heat map to put in supplementary. Make a demographic table of the fusobacterium abundances (X in IM that are high abundance, X in IM that are low abundance). Link raw data in supplementary. 
+- **Aim 2**: DIVERSITY. Look at differences between high and low Fusobacterium within each stage. We have graphs of the differences in each plot.
+  - How do we compare between stages?
+  - Probably will make one plot which would have distance on y axis while x axis has each stage, this comparing both between and within stages.
+  - 
+- **Aim 3**: Indicator Species Analysis which shows the microbiome most associated with each group. Have table of ISA results of overall groups (IN vs. GC) and have a table of ISA results of low and high abundance within groups. 
+- Seeing diversity is becoming more diverse --> beta-diversity with a PCoA plot would show this
