@@ -249,7 +249,7 @@ OBJECTIVE OF PAPER: See how Fusobacteirum affects the microbiome
 We are looking at known indicators with Gastric Cancer and see how Fusobacterium changes this.
  
 
-- Seeing diversity is becoming more diverse --> beta-diversity with a PCoA plot would show this
+- Seeing diversity is becoming more diverse --> beta-diversity with a PCoA plot would show this (we don't need to make PCoA plot)
 
 ## November 21, 2024
 
