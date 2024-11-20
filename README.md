@@ -256,6 +256,10 @@ We are looking at known indicators with Gastric Cancer and see how Fusobacterium
 ### Agenda
 
 - Go through and review all the figures
+  - Aim 1: Heat Map and Demographic Info
+  - Aim 2: Beta diversity plot
+  - Aim 3: Core Microbiome Diagram --> 2 venn diagram
+  - Aim 4: Heat map
 
 ### Meeting Minutes
 
