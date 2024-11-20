@@ -250,3 +250,12 @@ We are looking at known indicators with Gastric Cancer and see how Fusobacterium
  
 
 - Seeing diversity is becoming more diverse --> beta-diversity with a PCoA plot would show this
+
+## November 21, 2024
+
+### Agenda
+
+- Go through and review all the figures
+
+### Meeting Minutes
+
