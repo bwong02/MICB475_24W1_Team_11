@@ -1,0 +1,52 @@
+library(phyloseq)
+library(ape)
+library(tidyverse)
+library(picante)
+
+load("ps_filt.RData")
+load("ps_rare.RData")
+
+#### Beta diversity #####
+
+## using unweighted unifrac ## 
+##unsure if the weighted piece is necessary
+unweighted_unifrac <- distance(ps_rare, method="unifrac", weighted = FALSE)
+
+pcoa_unifrac <- ordinate(ps_rare, method="PCoA", distance=unweighted_unifrac)
+
+plot_ordination(ps_rare, pcoa_unifrac, color = "Fusobacterium_abundance", shape="Group")
+
+gg_pcoa_fuso <- plot_ordination(ps_rare, pcoa_unifrac, color = "Fusobacterium_abundance", shape="Group") +
+  labs(pch="Health State", col = "Fusobacterium Abundance")
+gg_pcoa_fuso
+
+##stuck here - how do we wanna do h. pylori -- the column name should be changed?
+gg_pcoa_hpyl <- plot_ordination(ps_rare, pcoa_unifrac, color = "Fusobacterium_abundance", shape="Group") +
+  labs(pch="Health State", col = "Fusobacterium Abundance")
+gg_pcoa_hpyl
+
+ggsave("gg_pcoa_fuso.png"
+       , gg_pcoa_fuso
+       , height=4, width=8)
+
+#### Taxonomy bar plots ####
+
+# Plot bar plot of taxonomy
+plot_bar(ps_rare, fill="Phylum") 
+
+# Convert to relative abundance
+ps_RA <- transform_sample_counts(ps_rare, function(x) x/sum(x))
+
+# "glom" by phylum 
+ps_phylum <- tax_glom(ps_RA, taxrank = "Phylum", NArm=FALSE)
+
+plot_bar(ps_phylum, fill="Phylum") + 
+  facet_wrap(.~Fusobacterium_abundance, scales = "free_x")
+
+gg_taxa <- plot_bar(ps_phylum, fill="Phylum") + 
+  facet_wrap(.~Fusobacterium_abundance, scales = "free_x")
+gg_taxa
+
+ggsave("plot_taxonomy.png"
+       , gg_taxa
+       , height=8, width =20)
