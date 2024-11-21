@@ -257,7 +257,7 @@ We are looking at known indicators with Gastric Cancer and see how Fusobacterium
 
 - Go through and review all the figures
   - Aim 1: Heat Map and Demographic Info
-  - Aim 2: Beta diversity plot
+  - Aim 2: Beta diversity plots (which plots do we need to generate in R / feedback on the ones we have (PCoA vs Taxonomy Bar Graph?)
   - Aim 3: Core Microbiome Diagram --> 2 venn diagram
   - Aim 4: Heat map
 
