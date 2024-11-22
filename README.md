@@ -263,3 +263,33 @@ We are looking at known indicators with Gastric Cancer and see how Fusobacterium
 
 ### Meeting Minutes
 
+Beta Diversity Plots
+- With or without Fusobacteria, between all stages, there's no beta-diversity differences (however, we couldn't resolve to species level)
+- However, there are differences in H. pylori (need to talk about why there are differences between the breath test and sequencing)
+- **Make a weighted unifrac plot**
+
+Indicator Species Analysis
+- Remove all the overlapping variables
+- **Have table with what unique species showed up**
+
+Core Microbiome Analysis
+- group_venn.png
+  - Healthy controls have their own unique ASVs
+  - CG seem to have the most unique ASVs
+- cg_hp_venn
+  - CG with H. pylori high has the most unique ASVs
+- GC high has zero unique ASVs
+- Fusobacterium doesn't seem to be impacting it much
+- **Take all 9 venn diagrams and tabulate it to see which has more of a shared or unqiue profile**
+
+PCoA plot
+- Conditions and stages kind of cluster
+- No trends for Fusobacterium
+
+Functional Plot
+- Some pathways enriched in Fusobacterium, more in the low Fusobacterium (negligible number)
+
+Story: H. pylori seems to make a difference. Fusobacterium as a whole seems to not make a difference.
+
+**SLIDES DUE NOV 2**
+
