@@ -296,5 +296,7 @@ Story: H. pylori seems to make a difference. Fusobacterium as a whole seems to n
 ## November 28, 2024
 
 ### Agenda
+- Go over figures
+- Go over presentation slides
 
 ### Meeting Minutes
