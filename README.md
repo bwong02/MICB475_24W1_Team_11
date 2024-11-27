@@ -291,5 +291,10 @@ Functional Plot
 
 Story: H. pylori seems to make a difference. Fusobacterium as a whole seems to not make a difference.
 
-**SLIDES DUE NOV 2**
+**SLIDES DUE DEC 2**
 
+## November 28, 2024
+
+### Agenda
+
+### Meeting Minutes
