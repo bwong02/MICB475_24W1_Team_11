@@ -302,3 +302,38 @@ Story: H. pylori seems to make a difference. Fusobacterium as a whole seems to n
 - https://docs.google.com/presentation/d/15ZL16fp_-Ei91OUO6eAP2NINj1aXtGWH2qU17e8bhOk/edit?usp=sharing 
 
 ### Meeting Minutes
+
+Functional:
+- For the slides, tabulate the disease: the comparison, then up and down (with number) --> give patterns of what the effects are happening OR do a bar plot
+  - FINDING: Significant increase of functional pathways as the disease progresses (more regulated pathways as the disease progresses) - more dysregulation as disease progresses
+
+Core Microbiome Analysis:
+- As stages go down, there's no indicator species for GC
+- Decrease in the phylogenetic distance: Richness is decreasing but diversity
+
+
+**THE PLAN**
+
+FIGURE 1: Unweighted UniFrac
+- Panel A: Fuso
+- Panel B: H. pylori
+- move astrisks closer
+- Box plots difference
+
+PCoA:
+- Move it to supplemental
+- Figure S1 for PCoA plot unweighted
+- Just the PCoA plots, not taxonomy bar plots
+
+TABLE 1: Core microbiome 
+- make 1 long tabke
+
+Indicator Species:
+- Move it to supplmental
+- Table S1: Make 1 big table
+
+FIGURE 2: Bar plot summary of PiCrest functional analysis
+
+PiCrest Individual Bar Plots
+- Move to supplemental
+- FIGURE S2 - PiCrest 8 panel thing (scrap healthy)
