@@ -319,6 +319,7 @@ FIGURE 1: Unweighted UniFrac
 - Panel B: H. pylori
 - move astrisks closer
 - Box plots difference
+- Over the disease progression, H. pylori causes a significant change in beta diversity
 
 FIG S1: PCoA
 - Move it to supplemental
@@ -326,7 +327,9 @@ FIG S1: PCoA
 - Just the PCoA plots, not taxonomy bar plots
 
 TABLE 1: Core microbiome 
-- make 1 long tabke
+- make 1 long table
+- **takeaway**: Actual core microbiome is growing
+- 
 
 TABLE S1: Indicator Species
 - Move it to supplmental
@@ -337,3 +340,5 @@ FIGURE 2: Bar plot summary of PiCrest functional analysis
 PiCrest Individual Bar Plots
 - Move to supplemental
 - FIGURE S2 - PiCrest 8 panel thing (scrap healthy)
+
+**whatever diversity changes are happening from H. pylori, its driving a functional change**
