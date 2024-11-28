@@ -314,6 +314,11 @@ Core Microbiome Analysis:
 
 **THE PLAN**
 
+**overall:** we see a difference between positive and negative H. pylori as the disease progresses 
+
+- chronic gastritis = more rich microbiome
+- richness decreases 
+
 FIGURE 1: Unweighted UniFrac
 - Panel A: Fuso
 - Panel B: H. pylori
@@ -329,7 +334,13 @@ FIG S1: PCoA
 TABLE 1: Core microbiome 
 - make 1 long table
 - **takeaway**: Actual core microbiome is growing
-- 
+- to do: switch placement of IN and IM
+- This data is just within the stages - this is solely comparing high / low for that stage
+
+- NEW HANS IDEA:
+- 1) showing an overall decrease in # of ASVs
+  2) overall, we show a lot more shared ASVs (keep in mind lower numbers of ASVs, difficult to find significance)
+  3) compare to alpha diversity - (unclear trend)
 
 TABLE S1: Indicator Species
 - Move it to supplmental
