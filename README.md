@@ -320,7 +320,7 @@ FIGURE 1: Unweighted UniFrac
 - move astrisks closer
 - Box plots difference
 
-PCoA:
+FIG S1: PCoA
 - Move it to supplemental
 - Figure S1 for PCoA plot unweighted
 - Just the PCoA plots, not taxonomy bar plots
@@ -328,7 +328,7 @@ PCoA:
 TABLE 1: Core microbiome 
 - make 1 long tabke
 
-Indicator Species:
+TABLE S1: Indicator Species
 - Move it to supplmental
 - Table S1: Make 1 big table
 
