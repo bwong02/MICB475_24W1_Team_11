@@ -103,9 +103,6 @@ custom_labels <- c("Chronic gastritis (CG)_Low" = "Chronic gastritis",
                    "Intraepithelial neoplasia (IN)_Low" = "Intraepithelial neoplasia",
                    "Intraepithelial neoplasia (IN)_High" = "")
 
-# # Filter out the "Healthy control (HC)_Low" group since it doesn't have a Positive counterpart
-# plot_data_filtered <- plot_data[plot_data$Stage_FusoAbundance != "Healthy control (HC)_Low", ]
-
 # Create a new variable to distinguish positive/negative within each group
 plot_data_filtered$HighLow <- factor(
   ifelse(grepl("High", plot_data_filtered$Stage_FusoAbundance), "High", "Low"),
