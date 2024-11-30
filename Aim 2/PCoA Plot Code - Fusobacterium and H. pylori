@@ -1,0 +1,72 @@
+library(phyloseq)
+library(ape)
+library(tidyverse)
+library(picante)
+
+load("ps_filt.RData")
+load("ps_rare.RData")
+
+#### Beta diversity #####
+
+###Fusobacterium Abundance PCoA Plot###
+
+## using unweighted unifrac ## 
+##unsure if the weighted piece is necessary
+unweighted_unifrac <- distance(ps_rare, method="unifrac", weighted = FALSE)
+
+# check which methods you can specify
+?distance
+
+pcoa_unifrac <- ordinate(ps_rare, method="PCoA", distance=unweighted_unifrac)
+
+plot_ordination(ps_rare, pcoa_unifrac, color = "Stage_FusoAbundance", shape="Group")
+
+gg_pcoa_fuso <- plot_ordination(ps_rare, pcoa_unifrac, color = "Stage_FusoAbundance") +
+  labs(col = "Fusobacterium Abundance")
+gg_pcoa_fuso
+
+ggsave("gg_pcoa_fuso_NEW.png"
+       , gg_pcoa_fuso
+       , height=4, width=8)
+
+###Fusobacterium Abundance PCoA Plot###
+
+## using unweighted unifrac ## 
+##unsure if the weighted piece is necessary
+unweighted_unifrac <- distance(ps_rare, method="unifrac", weighted = FALSE)
+
+# check which methods you can specify
+?distance
+
+pcoa_unifrac <- ordinate(ps_rare, method="PCoA", distance=unweighted_unifrac)
+
+plot_ordination(ps_rare, pcoa_unifrac, color = "Stage_FusoAbundance")
+
+gg_pcoa_fuso <- plot_ordination(ps_rare, pcoa_unifrac, color = "Stage_FusoAbundance") +
+  labs(col = "Fusobacterium Abundance")
+gg_pcoa_fuso
+
+ggsave("gg_pcoa_fuso.png"
+       , gg_pcoa_fuso
+       , height=4, width=8)
+
+###H. pylori Abundance PCoA Plot###
+
+## using unweighted unifrac ## 
+##unsure if the weighted piece is necessary
+unweighted_unifrac <- distance(ps_rare, method="unifrac", weighted = FALSE)
+
+# check which methods you can specify
+?distance
+
+pcoa_unifrac_hpyl <- ordinate(ps_rare, method="PCoA", distance=unweighted_unifrac)
+
+plot_ordination(ps_rare, pcoa_unifrac_hpyl, color = "Stage_Pylori")
+
+gg_pcoa_hpyl <- plot_ordination(ps_rare, pcoa_unifrac, color = "Stage_Pylori") +
+  labs(col = "H. pylori Status")
+gg_pcoa_hpyl
+
+ggsave("gg_pcoa_hpyl_NEW.png"
+       , gg_pcoa_hpyl
+       , height=4, width=8)
