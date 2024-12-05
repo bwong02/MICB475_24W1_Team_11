@@ -1,0 +1,52 @@
+#Filter the no mitochondria no chloroplast table.qza file to remove features with 5 or fewer counts
+qiime feature-table filter-features \
+--i-table table-no-mitochondria-no-chloroplast-up.qza \
+--p-min-frequency 5\
+--o-filtered-table feature-frequency-filtered-table.qza 
+
+#Running PICRUSt2 qiime2 plugin to get predicted functional information
+qiime picrust2 full-pipeline \
+--i-table feature-frequency-filtered-table.qza \
+--i-seq rep-seqs-252.qza \
+--output-dir q2-picrust2_output \
+--p-placement-tool sepp \
+--p-hsp-method pic \
+--p-max-nsti 2 \
+--verbose
+
+#Convert picrust2 output files to human readable files
+qiime tools export \
+--input-path q2-picrust2_output/pathways_abundance.qza \
+--output-path pathabun_exported
+
+qiime tools export \
+--input-path q2-picrust2_output/ec_metagenome.qza \
+--output-path ec_metagenome_exported
+
+qiime tools export \
+--input-path q2-picrust2_output/ko_metagenome.qza \
+--output-path ko_metagenome_exported
+
+#convert exported .biom files to a table format
+biom convert \
+-i pathabun_exported/feature-table.biom \
+-o pathabun_exported/pathways_abundance.tsv \
+--to-tsv
+
+biom convert \
+-i ec_metagenome_exported/feature-table.biom \
+-o ec_metagenome_exported/ec_metagenome_pathway_abun.tsv \
+--to-tsv
+
+biom convert \
+-i ko_metagenome_exported/feature-table.biom \
+-o ko_metagenome_exported/ko_metagenome_pathway_abundance.tsv
+--to-tsv
+
+#Transfer the 3 pathway table files to local computer for continued use in R component of functional analysis
+
+
+
+
+
+
