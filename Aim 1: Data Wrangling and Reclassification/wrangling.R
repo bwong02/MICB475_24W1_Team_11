@@ -11,13 +11,13 @@ otu_table <- read.delim(file="table.txt", skip=1, row.names = 1)
 
 taxonomy <- read.delim("taxonomy.tsv", header = TRUE, row.names = 1, sep="\t")
 
-# Step 1: Identify the OTU corresponding to Fusobacterium in your taxonomy
+# Identify the OTU corresponding to Fusobacterium in taxonomy
 fuso_otu <- rownames(taxonomy)[grepl("g__Fusobacterium", taxonomy$Taxon)]
 
-# Step 2: Initialize all samples as "No" in the metadata
+# Initialize all samples as "No" in the metadata
 metadata$fuso_detected <- "Low"
 
-# Step 3: If Fusobacterium OTU(s) are found, proceed with percentage-based detection
+# If Fusobacterium OTU(s) are found, proceed with percentage-based detection
 if (length(fuso_otu) > 0) {
   # Get the absolute abundance of Fusobacterium for each sample
   fuso_abundance <- otu_table[fuso_otu, , drop = FALSE]
@@ -28,11 +28,11 @@ if (length(fuso_otu) > 0) {
   # Convert Fusobacterium abundance to percentage
   fuso_percentage <- colSums(fuso_abundance) / total_abundance_per_sample * 100
   
-  # Step 4: Set detection threshold (e.g., > 1% abundance)
+  # Set detection threshold ( > 1% abundance)
   detected_samples <- fuso_percentage > 1
   
   
-  # Set "Yes" for samples with detected Fusobacterium (i.e., percentage > 1%)
+  # Set "Yes" for samples with detected Fusobacterium (percentage > 1%)
   metadata$fuso_detected[detected_samples] <- "High"
 }
 # Rename the column after all processing
