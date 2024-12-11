@@ -1,4 +1,0 @@
-#### Aim 3: Characterise gastric mucosa microbiome indicator taxa associated with H. pylori and Fusobacterium abundance at various gastric cancer disease stages #### 
-3A. From unrarefied data, perform  indicator species analysis on R using updated metadata file (from 1F) based on disease stage grouping
-3B. Evaluate identified indicator species between H. pylori and Fusobacterium abundance groups to identify statistically significant associations using R
-
