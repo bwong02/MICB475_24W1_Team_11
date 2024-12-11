@@ -1,8 +1,6 @@
 #Load Packages
 library(tidyverse)
 library(phyloseq)
-library(microbiome)
-library(ggVennDiagram)
 library(ggsignif)
 library(ggplot2)
 
@@ -23,14 +21,14 @@ sample_data(physeq)$ObservedFeatures <- richness$Observed
 # Create a data frame combining sample metadata and observed features
 plot_data <- data.frame(sample_data(physeq), ObservedFeatures = richness$Observed)
 
-custom_labels <- c("Chronic gastritis (CG)_Negative" = "Chronic gastritis",
+custom_labels <- c("Chronic gastritis (CG)_Negative" = " Chronic \n gastritis",
                    "Chronic gastritis (CG)_Positive" = "",
-                   "Gastric cancer (GC)_Negative" = "Gastric cancer",
+                   "Gastric cancer (GC)_Negative" = "   Gastric \n   cancer",
                    "Gastric cancer (GC)_Positive" = "",
                    "Healthy control (HC)_Negative" = "HC-",
-                   "Intestinal metaplasia (IM）_Negative" = "Intestinal metaplasia",
+                   "Intestinal metaplasia (IM）_Negative" = "  Intestinal \n metaplasia",
                    "Intestinal metaplasia (IM）_Positive" = "",
-                   "Intraepithelial neoplasia (IN)_Negative" = "Intraepithelial neoplasia",
+                   "Intraepithelial neoplasia (IN)_Negative" = "Intraepithelial \n  neoplasia",
                    "Intraepithelial neoplasia (IN)_Positive" = "")
 
 # Filter out the "Healthy control (HC)_Negative" group since it doesn't have a Positive counterpart
@@ -50,22 +48,39 @@ plot_data_filtered$Stage_Pylori <- factor(plot_data_filtered$Stage_Pylori,
                                                      "Gastric cancer (GC)_Negative", "Gastric cancer (GC)_Positive"))
 
 # Create the plot with reordered groups and significance testing
-a_pyloriPlot = ggplot(plot_data_filtered, aes(x = Stage_Pylori, y = ObservedFeatures, fill = PosNeg)) + 
-  geom_boxplot() +
+#a_pyloriPlot = 
+ggplot(plot_data_filtered, aes(x = Stage_Pylori, y = ObservedFeatures, fill = PosNeg)) + 
+  geom_boxplot(outlier.shape = NA) +
+  geom_jitter(
+    aes(color = "black"),  
+    width = 0.1,          # Adjust the horizontal spread of jitter
+    size = 3,             # Adjust point size
+    alpha = 0.3           # Make points slightly transparent
+  ) +
   labs(
-    title = "Alpha Diversity Comparison of Observed Features by H. pylori Status Across Disease Stages",
+    title = "", #"Alpha Diversity Comparison of Observed Features by \nH. pylori Status Across Disease Stages",
     x = "Disease Stage",
     y = "Number of Observed Features"
   ) +
   scale_x_discrete(labels = custom_labels) +  # Apply custom labels
   scale_fill_manual(
     values = c("Negative" = "lightblue", "Positive" = "salmon"),  # Colors for positive and negative
-    name = "H. pylori status"  # Change the legend title here
+    name = expression("" * italic(H.~pylori) * " Status")  # Change the legend title here
   ) +
-  theme_minimal() +
+  scale_color_manual(
+    values = c("Negative" = "lightblue", "Positive" = "salmon"),  # Match jitter colors with boxplot fill
+    name = expression("" * italic(H.~pylori) * " Status")
+  ) +
+  theme_test() +
   theme(
-    axis.text.x = element_text(angle = 0, hjust = 0), # Rotate x-axis labels
-    plot.title = element_text(hjust = 0.5, size = 16)
+    axis.text.x = element_text(angle = 0, size = 22, hjust = 0.2), # Rotate x-axis labels
+    plot.title = element_text(hjust = 0.5, size = 28),
+    axis.text.y = element_text(size = 16),
+    aspect.ratio = 1,  # Adjust the ratio to make it wider
+    axis.title = element_text(size=20),
+    #legend.position = "none", #removes legend
+    legend.text = element_text(size = 16),  # Increase legend text size
+    legend.title = element_text(size = 16)  # Increase legend title size
   ) +
   geom_signif(
     comparisons = list(
@@ -82,26 +97,56 @@ a_pyloriPlot = ggplot(plot_data_filtered, aes(x = Stage_Pylori, y = ObservedFeat
   )
 
 
+### Fusobacterium
+
+# Initialize a data frame to store results
+comparison_results <- data.frame(
+  Comparison = character(),
+  P_Value = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Define the comparisons
+comparisons <- list(
+  c("Chronic gastritis (CG)_Negative", "Chronic gastritis (CG)_Positive"),
+  c("Gastric cancer (GC)_Negative", "Gastric cancer (GC)_Positive"),
+  c("Intestinal metaplasia (IM）_Negative", "Intestinal metaplasia (IM）_Positive"),
+  c("Intraepithelial neoplasia (IN)_Negative", "Intraepithelial neoplasia (IN)_Positive")
+)
+
+# Perform the Wilcoxon test for each comparison
+for (comparison in comparisons) {
+  group1 <- comparison[1]
+  group2 <- comparison[2]
+  
+  # Subset data for the two groups
+  group1_data <- plot_data_filtered$ObservedFeatures[plot_data_filtered$Stage_Pylori == group1]
+  group2_data <- plot_data_filtered$ObservedFeatures[plot_data_filtered$Stage_Pylori == group2]
+  
+  # Perform the test
+  test_result <- wilcox.test(group1_data, group2_data, exact = FALSE)
+  
+  # Add to results data frame
+  comparison_results <- rbind(
+    comparison_results,
+    data.frame(Comparison = paste(group1, "vs", group2),
+               P_Value = test_result$p.value)
+  )
+}
 
 
-
-
-
-
-
-
-
-
-
-custom_labels <- c("Chronic gastritis (CG)_Low" = "Chronic gastritis",
+custom_labels <- c("Chronic gastritis (CG)_Low" = " Chronic \n gastritis",
                    "Chronic gastritis (CG)_High" = "",
-                   "Gastric cancer (GC)_Low" = "Gastric cancer",
+                   "Gastric cancer (GC)_Low" = "   Gastric \n   cancer",
                    "Gastric cancer (GC)_High" = "",
                    "Healthy control (HC)_Low" = "HC-",
-                   "Intestinal metaplasia (IM）_Low" = "Intestinal metaplasia",
+                   "Intestinal metaplasia (IM）_Low" = "  Intestinal \n metaplasia",
                    "Intestinal metaplasia (IM）_High" = "",
-                   "Intraepithelial neoplasia (IN)_Low" = "Intraepithelial neoplasia",
+                   "Intraepithelial neoplasia (IN)_Low" = "Intraepithelial \n  neoplasia",
                    "Intraepithelial neoplasia (IN)_High" = "")
+
+# # Filter out the "Healthy control (HC)_Low" group since it doesn't have a Positive counterpart
+# plot_data_filtered <- plot_data[plot_data$Stage_FusoAbundance != "Healthy control (HC)_Low", ]
 
 # Create a new variable to distinguish positive/negative within each group
 plot_data_filtered$HighLow <- factor(
@@ -117,22 +162,39 @@ plot_data_filtered$Stage_FusoAbundance <- factor(plot_data_filtered$Stage_FusoAb
                                                      "Gastric cancer (GC)_Low", "Gastric cancer (GC)_High"))
 
 # Create the plot with reordered groups and significance testing
-a_fusoPlot = ggplot(plot_data_filtered, aes(x = Stage_FusoAbundance, y = ObservedFeatures, fill = HighLow)) + 
-  geom_boxplot() +
+#a_fusoPlot = 
+ggplot(plot_data_filtered, aes(x = Stage_FusoAbundance, y = ObservedFeatures, fill = HighLow)) + 
+  geom_boxplot(outlier.shape = NA) +
+  geom_jitter(
+    aes(color = "black"),  
+    width = 0.1,          # Adjust the horizontal spread of jitter
+    size = 3,             # Adjust point size
+    alpha = 0.3           # Make points slightly transparent
+  ) +
   labs(
-    title = "Alpha Diversity Comparison of Observed Features by Fusobacterium Abundance Across Disease Stages",
+    title = "",
     x = "Disease Stage",
     y = "Number of Observed Features"
   ) +
   scale_x_discrete(labels = custom_labels) +  # Apply custom labels
   scale_fill_manual(
     values = c("Low" = "lightblue", "High" = "salmon"),  # Colors for positive and negative
-    name = "Fusobacterium\n abundance"  # Change the legend title here
+    name = expression(atop("" * italic(Fusobacterium) * "", "Abundance"))  # Change the legend title here
   ) +
-  theme_minimal() +
+  scale_color_manual(
+    values = c("Low" = "lightblue", "High" = "salmon"),  # Match jitter colors with boxplot fill
+    name = expression(atop("" * italic(Fusobacterium) * "", "Abundance")) 
+  ) +
+  theme_test() +
   theme(
-    axis.text.x = element_text(angle = 0, hjust = 0), # Rotate x-axis labels
-    plot.title = element_text(hjust = 0.1, size = 16)
+    axis.text.x = element_text(angle = 0, size = 22, hjust = 0.2), # Rotate x-axis labels
+    plot.title = element_text(hjust = 0.5, size = 28),
+    axis.text.y = element_text(size = 16),
+    aspect.ratio = 1,  # Adjust the ratio to make it wider
+    axis.title = element_text(size=20),
+    #legend.position = "none", #removes legend
+    legend.text = element_text(size = 16),  # Increase legend text size
+    legend.title = element_text(size = 16)  # Increase legend title size
   ) +
   geom_signif(
     comparisons = list(
