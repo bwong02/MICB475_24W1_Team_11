@@ -8,7 +8,7 @@ library(ggplot2)
 load("3AB_ps_filt.RData")
 
 
-# Load your phyloseq object
+# Load phyloseq object
 physeq <-  ps_filt
 
 # Estimate richness, including observed features
@@ -40,7 +40,7 @@ plot_data_filtered$PosNeg <- factor(
   levels = c("Negative", "Positive")
 )
 
-# Reorder the Stage_Pylori factor levels to your desired order
+# Reorder the Stage_Pylori factor levels to order
 plot_data_filtered$Stage_Pylori <- factor(plot_data_filtered$Stage_Pylori,
                                           levels = c("Chronic gastritis (CG)_Negative", "Chronic gastritis (CG)_Positive",
                                                      "Intestinal metaplasia (IM）_Negative", "Intestinal metaplasia (IM）_Positive",
@@ -145,9 +145,6 @@ custom_labels <- c("Chronic gastritis (CG)_Low" = " Chronic \n gastritis",
                    "Intraepithelial neoplasia (IN)_Low" = "Intraepithelial \n  neoplasia",
                    "Intraepithelial neoplasia (IN)_High" = "")
 
-# # Filter out the "Healthy control (HC)_Low" group since it doesn't have a Positive counterpart
-# plot_data_filtered <- plot_data[plot_data$Stage_FusoAbundance != "Healthy control (HC)_Low", ]
-
 # Create a new variable to distinguish positive/negative within each group
 plot_data_filtered$HighLow <- factor(
   ifelse(grepl("High", plot_data_filtered$Stage_FusoAbundance), "High", "Low"),
@@ -179,7 +176,7 @@ ggplot(plot_data_filtered, aes(x = Stage_FusoAbundance, y = ObservedFeatures, fi
   scale_x_discrete(labels = custom_labels) +  # Apply custom labels
   scale_fill_manual(
     values = c("Low" = "lightblue", "High" = "salmon"),  # Colors for positive and negative
-    name = expression(atop("" * italic(Fusobacterium) * "", "Abundance"))  # Change the legend title here
+    name = expression(atop("" * italic(Fusobacterium) * "", "Abundance"))  # Change the legend title
   ) +
   scale_color_manual(
     values = c("Low" = "lightblue", "High" = "salmon"),  # Match jitter colors with boxplot fill
@@ -205,7 +202,7 @@ ggplot(plot_data_filtered, aes(x = Stage_FusoAbundance, y = ObservedFeatures, fi
     ),
     map_signif_level = TRUE,
     step_increase = 0.1,
-    test = "wilcox.test",  # Specify test type if needed
+    test = "wilcox.test",  # Specify test type
     test.args = list(exact = FALSE),  # Allow approximate p-value to avoid tie issues
     y_position = c(900, 810, 730, 640)
   )
