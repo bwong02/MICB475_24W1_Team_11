@@ -1,3 +1,0 @@
-#### Aim 2: Investigate the effect of H. pylori and Fusobacterium abundance on the diversity of the gastric mucosa microbiome at various gastric cancer disease stages ####
-2A. Using updated metadata file (from 1F), perform alpha and beta diversity analysis between H. pylori and Fusobacterium abundance groups using QIIME2
-2B. Evaluate diversity metrics and perform statistical analysis on alpha and beta diversity metrics using R
