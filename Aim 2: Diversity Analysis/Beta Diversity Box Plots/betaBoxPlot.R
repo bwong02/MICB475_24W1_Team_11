@@ -33,7 +33,7 @@ negative_medians <- negative_negative_data %>%
   summarise(median_distance = median(Distance, na.rm = TRUE))
 
 
-# Filter for Negative/Positive group (ensure it's the right comparison)
+# Filter for Negative/Positive group
 valid_data_filtered <- data[data$Variant1 == "Negative" & data$Variant2 == "Positive", ]
 # Remove Healthy control as no positive samples exist
 valid_data_filtered <- valid_data_filtered[valid_data_filtered$Stage1 != "Healthy control (HC)", ]
@@ -210,7 +210,7 @@ negative_medians <- negative_negative_data %>%
   group_by(Stage1) %>%
   summarise(median_distance = median(Distance, na.rm = TRUE))
 
-# Filter for Negative/Positive group (ensure it's the right comparison)
+# Filter for Negative/Positive group
 valid_data_filtered <- data[data$Variant1 == "Negative" & data$Variant2 == "Positive", ]
 # Remove Healthy control as no positive samples exist
 valid_data_filtered <- valid_data_filtered[valid_data_filtered$Stage1 != "Healthy control (HC)", ]
