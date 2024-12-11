@@ -1,7 +1,7 @@
 ### MICB 475: Data Science Research in Microbiology and Immunology
 
 Folders are organized based on the type of analysis, which corresponds to the methods section in the manuscript. 
-1. Data analysis in QIIME2
+1. QIIME2 data processing
 2. Data wrangling and processing
 3. Alpha and beta diversity analysis
 4. Core microbiome and indicator species analysis
