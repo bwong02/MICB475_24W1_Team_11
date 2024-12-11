@@ -1,0 +1,160 @@
+# Imports seq data via manifest
+qiime tools import \
+  --type "SampleData[SequencesWithQuality]" \
+  --input-format SingleEndFastqManifestPhred33V2 \
+  --input-path ./gastric_cancer_manifest.tsv \
+  --output-path ./demux_seqs.qza
+
+# Create visualization of demultiplexed samples
+qiime demux summarize \
+  --i-data demux_seqs.qza \
+  --o-visualization demux_seqs.qzv
+
+# Filtering out reads based on the quality score
+qiime quality-filter q-score \
+ --i-demux demux_seqs.qza \
+ --o-filtered-sequences demux-filtered.qza \
+ --o-filter-stats demux-filter-stats.qza
+
+### Denoise using deblur
+qiime deblur denoise-16S \
+  --i-demultiplexed-seqs demux-filtered.qza \
+  --p-trim-length 252 \
+  --o-representative-sequences rep-seqs-252.qza \
+  --o-table table-252.qza \
+  --p-sample-stats \
+  --o-stats deblur-stats-252.qza
+
+# Visualize ASVs stats, convert qza to qzv files
+qiime feature-table tabulate-seqs \
+  --i-data ref-seqs-252-trimmed-up.qza \
+  --o-visualization ref-seqs-252-trimmed-up.qzv
+
+qiime feature-table summarize \
+  --i-table table-252.qza \
+  --o-visualization table-252.qzv \
+  --m-sample-metadata-file gastric_cancer_metadata.tsv
+
+ # Train classifier and filter
+qiime feature-classifier extract-reads \
+  --i-sequences silva-138-99-seqs.qza \
+  --p-f-primer AGAGTTTGATCCTGGCTCAG \
+  --p-r-primer GGACTACHVGGGTWTCTAAT \
+  --p-trunc-len 252 \
+  --o-reads ref-seqs-252-trimmed-up.qza; \
+qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads ref-seqs-252-trimmed-up.qza \
+  --i-reference-taxonomy silva_ref_files/silva-138-99-tax.qza \
+  --o-classifier classifier-up.qza; \
+qiime feature-classifier classify-sklearn \
+  --i-classifier classifier-up.qza \
+  --i-reads rep-seqs-252.qza \
+  --o-classification taxonomy-up.qza; \
+qiime taxa filter-table \
+  --i-table table-252.qza \
+  --i-taxonomy taxonomy-up.qza \
+  --p-exclude mitochondria,chloroplast \
+  --o-filtered-table table-no-mitochondria-no-chloroplast-up.qza
+###
+
+
+### Permform and visualize rarefaction
+qiime diversity alpha-rarefaction \
+  --i-table table-252.qza \
+  --i-phylogeny rooted-tree-252.qza \
+  --p-max-depth 20000 \
+  --m-metadata-file gastric_cancer_metadata.tsv \
+  --o-visualization alpha-rarefaction-20000.qzv
+
+### export files for use in R
+qiime tools export \
+  --input-path table-no-mitochondria-no-chloroplast-up.qza \
+  --output-path .; \
+qiime tools export \
+  --input-path taxonomy-up.qza \
+  --output-path .; \
+qiime tools export \
+  --input-path rooted-tree-252.qza \
+  --output-path .; \
+biom convert -i feature-table.biom --to-tsv -o table.txt
+
+
+
+##### Run alpha and beta diveristy metrics
+qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree-252.qza \
+  --i-table table-no-mitochondria-no-chloroplast-up.qza \
+  --p-sampling-depth 7381 \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --output-dir core-metrics-results-lh; \
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results-lh/faith_pd_vector.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --o-visualization core-metrics-results-lh/faith-pd-group-significance.qzv; \
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results-lh/evenness_vector.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --o-visualization core-metrics-results-lh/evenness-group-significance.qzv; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Group \
+  --o-visualization core-metrics-results-lh/unweighted-unifrac-group-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Fusobacterium_abundance \
+  --o-visualization core-metrics-results-lh/unweighted-unifrac-Fusobacterium_abundance-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_FusoAbundance \
+  --o-visualization core-metrics-results-lh/unweighted-unifrac-Stage_FusoAbundance-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_Pylori \
+  --o-visualization core-metrics-results-lh/unweighted-unifrac-Stage_Pylori-significance.qzv \
+  --p-pairwise
+
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_FusoAbundance \
+  --o-visualization core-metrics-results-lh/weighted-unifrac-Stage_FusoAbundance-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_Pylori \
+  --o-visualization core-metrics-results-lh/weighted-unifrac-Stage_Pylori-significance.qzv \
+  --p-pairwise
+
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/jaccard_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_FusoAbundance \
+  --o-visualization core-metrics-results-lh/jaccard-Stage_FusoAbundance-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/jaccard_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_Pylori \
+  --o-visualization core-metrics-results-lh/jaccard-Stage_Pylori-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/bray_curtis_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_FusoAbundance \
+  --o-visualization core-metrics-results-lh/bray_curtis-Stage_FusoAbundance-significance.qzv \
+  --p-pairwise; \
+qiime diversity beta-group-significance \
+  --i-distance-matrix core-metrics-results-lh/bray_curtis_distance_matrix.qza \
+  --m-metadata-file LH_gastric_cancer_metadata.tsv \
+  --m-metadata-column Stage_Pylori \
+  --o-visualization core-metrics-results-lh/bray_curtis-Stage_Pylori-significance.qzv \
+  --p-pairwise
+#####
