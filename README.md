@@ -8,4 +8,4 @@ Folders are organized based on the type of analysis, which corresponds to the me
 5. Indicator species analysis
 6. PICRUSt2 predictive functional analysis
 
-Additionally, you can locate our agendas and meeting minutes in the Meeting_Minutes_and_Agendas file. 
+Additionally, you can locate our agendas and meeting minutes in the Meeting_Minutes_and_Agendas.md file. 
